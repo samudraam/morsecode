@@ -8,7 +8,7 @@ const MorseToB = ({ isMorseAll, color }) => {
 
   useEffect(() => {
     if (isMorseAll !== null) {
-      setIsMorse(isMorseAll);
+      setIsMorse(isMorseAll ?? false);
     }
   }, [isMorseAll]);
 
@@ -39,7 +39,6 @@ const MorseToB = ({ isMorseAll, color }) => {
             letter: { cx: 580, cy: 120, borderRadius: "50%" },
           }}
           initial={{ cx: 1029, cy: 125, r: 125 }}
-          animate={isMorse ? "morse" : "letter"}
           transition={{
             duration: 0.8,
             ease: "easeInOut",
@@ -58,7 +57,6 @@ const MorseToB = ({ isMorseAll, color }) => {
             letter: { cx: 355, cy: 416, r: 100 },
           }}
           initial={{ cx: 1351, cy: 125, r: 125 }}
-          animate={isMorse ? "morse" : "letter"}
           transition={{
             duration: 0.8,
             ease: "easeInOut",
@@ -78,7 +76,6 @@ const MorseToB = ({ isMorseAll, color }) => {
             letter: { cx: 580, cy: 708, r: 125 },
           }}
           initial={{ cx: 1673, cy: 125, r: 125 }}
-          animate={isMorse ? "morse" : "letter"}
           transition={{
             duration: 0.8,
             ease: "easeInOut",

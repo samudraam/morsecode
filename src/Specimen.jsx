@@ -1,29 +1,38 @@
+import { useState, useEffect } from "react";
 import "./Specimen.css";
-import PropTypes from "prop-types";
+import ToggleSwitch from "./ToggleSwitch";
 import MorseToA from "./MorseToA";
 import MorseToB from "./MorseToB";
-import MorseToC from "./MorseToC";
-import MorseToD from "./MorseToD";
-import MorseToE from "./MorseToE";
 
-const letterComponents = [MorseToA, MorseToB, MorseToC, MorseToD, MorseToE];
+function Specimen() {
+  const [isMorseAll, setIsMorseAll] = useState(false);
+  const [mounted, setMounted] = useState(false); // ✅ Track mount state
 
-const Specimen = ({ isMorseAll }) => {
+  useEffect(() => {
+    setMounted(true); // ✅ Set true only after component mounts
+  }, []);
+
+  const letterComponents = [MorseToA, MorseToB];
+
   return (
-    <div className="grid-container">
-      {letterComponents.map((LetterComponent, idx) => {
-        return (
-          <div key={idx} className="grid-item">
-            <LetterComponent isMorseAll={isMorseAll} color={"white"} />
+    <div>
+      {mounted && ( // ✅ Prevent animation before mount
+        <>
+          <ToggleSwitch
+            isMorseAll={isMorseAll}
+            toggleAll={() => setIsMorseAll(!isMorseAll)}
+          />
+          <div className="grid-container">
+            {letterComponents.map((LetterComponent, idx) => (
+              <div key={idx} className="grid-item">
+                <LetterComponent isMorseAll={isMorseAll} color={"white"} />
+              </div>
+            ))}
           </div>
-        );
-      })}
+        </>
+      )}
     </div>
   );
-};
-
-Specimen.propTypes = {
-  isMorseAll: PropTypes.bool.isRequired,
-};
+}
 
 export default Specimen;

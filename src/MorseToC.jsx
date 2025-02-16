@@ -6,7 +6,7 @@ const MorseToC = ({ isMorseAll, color }) => {
   const [isMorse, setIsMorse] = useState(false);
   useEffect(() => {
     if (isMorseAll !== null) {
-      setIsMorse(isMorseAll);
+      setIsMorse(isMorseAll ?? false);
     }
   }, [isMorseAll]);
 
@@ -37,7 +37,6 @@ const MorseToC = ({ isMorseAll, color }) => {
             letter: { cx: 125, cy: 275, borderRadius: "50%" },
           }}
           initial={{ cx: 1029, cy: 125, r: 125 }}
-          animate={isMorse ? "morse" : "letter"}
           transition={{
             duration: 0.8,
             ease: "easeInOut",
@@ -52,9 +51,9 @@ const MorseToC = ({ isMorseAll, color }) => {
           height={122}
           initial={{ x: 10, y: 40, rotate: 0 }}
           fill={color}
-          animate={{
-            x: isMorse ? 10 : -1200,
-            y: isMorse ? 40 : 700,
+          variants={{
+            morse: { x: 10, y: 40 },
+            letter: { x: -1200, y: 700 },
           }}
           transition={{
             duration: 1,
@@ -74,7 +73,6 @@ const MorseToC = ({ isMorseAll, color }) => {
             letter: { cx: 125, cy: 556, r: 125 },
           }}
           initial={{ cx: 2210, cy: 125, r: 125 }}
-          animate={isMorse ? "morse" : "letter"}
           transition={{
             duration: 0.8,
             ease: "easeInOut",
@@ -94,6 +92,10 @@ const MorseToC = ({ isMorseAll, color }) => {
         animate={{
           x: isMorse ? 10 : 0,
           y: isMorse ? 40 : -50,
+        }}
+        variants={{
+          morse: { x: 10, y: 40 },
+          letter: { x: 0, y: 50 },
         }}
         transition={{
           duration: 1,

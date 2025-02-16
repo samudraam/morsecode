@@ -7,7 +7,7 @@ const MorseToA = ({ isMorseAll, color }) => {
 
   useEffect(() => {
     if (isMorseAll !== null) {
-      setIsMorse(isMorseAll);
+      setIsMorse(isMorseAll ?? false);
     }
   }, [isMorseAll]);
 
