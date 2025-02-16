@@ -14,6 +14,7 @@ function Specimen() {
 
   const letterComponents = [MorseToA, MorseToB];
 
+  console.log(isMorseAll);
   return (
     <div>
       {mounted && ( // ✅ Prevent animation before mount
@@ -25,7 +26,7 @@ function Specimen() {
           <div className="grid-container">
             {letterComponents.map((LetterComponent, idx) => (
               <div key={idx} className="grid-item">
-                <LetterComponent isMorseAll={isMorseAll} color={"white"} />
+                <LetterComponent isMorseAll={false} color={"white"} />
               </div>
             ))}
           </div>

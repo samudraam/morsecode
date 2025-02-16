@@ -1,6 +1,6 @@
 import "./App.css";
 import Specimen from "./Specimen";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Specimen />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Router>{" "}
       </div>
