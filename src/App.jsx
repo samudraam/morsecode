@@ -1,5 +1,4 @@
 import "./App.css";
-import { useEffect } from "react";
 import Specimen from "./Specimen";
 import {
   HashRouter as Router,
@@ -7,26 +6,19 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
+import ErrorHandler from "./ErrorHandler";
 
 function App() {
-  useEffect(() => {
-    if (!sessionStorage.getItem("reloaded")) {
-      sessionStorage.setItem("reloaded", "true");
-      window.location.reload();
-    }
-  }, []);
-
   return (
-    <>
+    <Router>
       <div className="App">
-        <Router>
-          <Routes>
-            <Route path="/" element={<Specimen />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        </Router>{" "}
+        <ErrorHandler />
+        <Routes>
+          <Route path="/" element={<Specimen />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 
