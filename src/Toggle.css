@@ -1,5 +1,5 @@
 .toggle-container {
-  margin-right: 4rem;
+  scale: 0.7;
 }
 .switch {
   position: relative;
@@ -32,7 +32,7 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: rgb(251, 251, 251);
   transition: 0.4s;
 }
 

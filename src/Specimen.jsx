@@ -18,6 +18,15 @@ import MorseToN from "./MorseToN";
 import MorseToO from "./MorseToO";
 import MorseToP from "./MorseToP";
 import MorseToQ from "./MorseToQ";
+import MorseToR from "./MorseToR";
+import MorseToS from "./MorseToS";
+import MorseToT from "./MorseToT";
+import MorseToU from "./MorseToU";
+import MorseToV from "./MorseToV";
+import MorseToW from "./MorseToW";
+import MorseToX from "./MorseToX";
+import MorseToY from "./MorseToY";
+import MorseToZ from "./MorseToZ";
 
 function Specimen() {
   const [isMorseAll, setIsMorseAll] = useState(false);
@@ -30,8 +39,15 @@ function Specimen() {
 
   console.log(isMorseAll);
   return (
-    <div>
-      <>
+    <>
+      <div className="container">
+        <div className="header-container">
+          <h1>telegraph</h1>
+          <ToggleSwitch
+            isMorseAll={isMorseAll}
+            toggleAll={() => setIsMorseAll(!isMorseAll)}
+          />
+        </div>
         <div className="grid-container">
           {mounted && <MorseToA isMorseAll={isMorseAll} color={globalColor} />}
           {mounted && <MorseToB isMorseAll={isMorseAll} color={globalColor} />}
@@ -50,9 +66,18 @@ function Specimen() {
           {mounted && <MorseToO isMorseAll={isMorseAll} color={globalColor} />}
           {mounted && <MorseToP isMorseAll={isMorseAll} color={globalColor} />}
           {mounted && <MorseToQ isMorseAll={isMorseAll} color={globalColor} />}
+          {mounted && <MorseToR isMorseAll={isMorseAll} color={globalColor} />}
+          {mounted && <MorseToS isMorseAll={isMorseAll} color={globalColor} />}
+          {mounted && <MorseToT isMorseAll={isMorseAll} color={globalColor} />}
+          {mounted && <MorseToU isMorseAll={isMorseAll} color={globalColor} />}
+          {mounted && <MorseToV isMorseAll={isMorseAll} color={globalColor} />}
+          {mounted && <MorseToW isMorseAll={isMorseAll} color={globalColor} />}
+          {mounted && <MorseToX isMorseAll={isMorseAll} color={globalColor} />}
+          {mounted && <MorseToY isMorseAll={isMorseAll} color={globalColor} />}
+          {mounted && <MorseToZ isMorseAll={isMorseAll} color={globalColor} />}
         </div>
-      </>
-    </div>
+      </div>
+    </>
   );
 }
 

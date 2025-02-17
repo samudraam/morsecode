@@ -1,40 +1,54 @@
+h1 {
+  font-family: "Dashed";
+  color: #ffffff;
+  font-size: 3rem;
+}
 .grid-container {
-  margin-left: 5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
-  grid-template-columns: repeat(3, 5fr);
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
   gap: 50px;
   padding: 20px;
   transition: all 0.5s ease-in-out;
+  max-width: 1200px;
 }
 
 .grid-item {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
-  width: fit-content;
-  padding-bottom: 50px;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
 }
 
-svg {
+.grid-item svg {
   width: 100%;
   height: auto;
 }
 
-@media (max-width: 768px) {
+.container {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+@media (max-width: 600px) {
   .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 40px;
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    gap: 20px;
   }
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 480px) {
   .grid-container {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
     margin-left: 0;
     margin-bottom: 40px;
   }

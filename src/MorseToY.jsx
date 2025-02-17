@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-const MorseToJ = ({ isMorseAll, color }) => {
+const MorseToY = ({ isMorseAll, color }) => {
   const [isMorse, setIsMorse] = useState(false);
 
   useEffect(() => {
@@ -30,84 +30,109 @@ const MorseToJ = ({ isMorseAll, color }) => {
       >
         {/* Morse Code Dashes */}
         <motion.rect
-          x={150}
           y={40}
           width={832}
           height={122}
           fill={color}
           variants={{
-            morse: { x: 150, y: 40, width: 832, height: 122 },
-            letter: { x: 125, y: 0, width: 567, height: 122 },
+            morse: { y: 40, width: 832, height: 122 },
+            letter: { x: -130, y: 250, width: 400, height: 122, rotate: 50 },
           }}
           initial="morse"
           animate={isMorse ? "morse" : "letter"}
           transition={{
             duration: 1,
             ease: "easeInOut",
-            delay: isMorse ? 0 : 0,
+            delay: isMorse ? 0.5 : 0,
           }}
         />
 
         <motion.rect
-          x={600}
+          x={620}
           y={40}
           width={832}
           height={122}
           fill={color}
           variants={{
-            morse: { x: 600, y: 40, width: 832, height: 122 },
-            letter: { x: -450, y: 265, width: 741, height: 122, rotate: -90 },
+            morse: { x: 620, y: 40, width: 832, height: 122 },
+            letter: { x: -300, y: -90, width: 400, height: 122, rotate: -50 },
           }}
           initial="morse"
           animate={isMorse ? "morse" : "letter"}
           transition={{
             duration: 1,
             ease: "easeInOut",
-            delay: isMorse ? 0 : 0,
-          }}
-        />
-
-        <motion.rect
-          x={1050}
-          y={40}
-          width={832}
-          height={122}
-          fill={color}
-          variants={{
-            morse: { x: 1050, y: 40, width: 832, height: 122 },
-            letter: { x: -960, y: 625, width: 535, height: 122 },
-          }}
-          initial="morse"
-          animate={isMorse ? "morse" : "letter"}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-            delay: isMorse ? 0 : 0,
+            delay: isMorse ? 0.8 : 0,
           }}
         />
 
         {/* Morse Code Dot */}
         <motion.circle
-          cx={125}
+          cx={1029}
           cy={125}
           r={125}
           fill={color}
           variants={{
-            morse: { cx: 125, cy: 125, r: 125 },
-            letter: { cx: 125, cy: 450, r: 125 },
+            morse: { cx: 1029, cy: 125, r: 125 },
+            letter: { cx: 370, cy: 420, r: 90 },
           }}
           initial="morse"
           animate={isMorse ? "morse" : "letter"}
           transition={{
             duration: 0.8,
             ease: "easeInOut",
-            delay: isMorse ? 0 : 0,
+            delay: isMorse ? 0.8 : 0,
           }}
         />
 
-        {/* Letter J Curve Line */}
+        <motion.rect
+          x={1070}
+          y={40}
+          width={832}
+          height={122}
+          fill={color}
+          variants={{
+            morse: { x: 1070, y: 40, width: 832, height: 122 },
+            letter: { x: -1120, y: 860, width: 300, height: 122, rotate: 90 },
+          }}
+          initial="morse"
+          animate={isMorse ? "morse" : "letter"}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            delay: isMorse ? 0.8 : 0,
+          }}
+        />
+
         <motion.path
-          d="M100 415 V750"
+          d="M370 800 L370 400"
+          stroke={color}
+          strokeWidth="8"
+          fill="none"
+          initial={{ pathLength: 0, transformOrigin: "50% 0%" }}
+          animate={{ pathLength: isMorse ? 0 : 1 }}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            delay: isMorse ? 0 : 0.8,
+          }}
+        />
+
+        <motion.path
+          d="M400 500 L200 200"
+          stroke={color}
+          strokeWidth="8"
+          fill="none"
+          initial={{ pathLength: 0, transformOrigin: "50% 0%" }}
+          animate={{ pathLength: isMorse ? 0 : 1 }}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            delay: isMorse ? 0 : 0.8,
+          }}
+        />
+        <motion.path
+          d="M700 40 L380 400"
           stroke={color}
           strokeWidth="8"
           fill="none"
@@ -124,14 +149,14 @@ const MorseToJ = ({ isMorseAll, color }) => {
   );
 };
 
-MorseToJ.propTypes = {
+MorseToY.propTypes = {
   isMorseAll: PropTypes.bool.isRequired,
   color: PropTypes.string.isRequired,
 };
 
-MorseToJ.defaultProps = {
+MorseToY.defaultProps = {
   isMorseAll: false,
   color: "#ffffff",
 };
 
-export default MorseToJ;
+export default MorseToY;

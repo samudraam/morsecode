@@ -8,16 +8,13 @@ function ErrorHandler() {
       ) {
         console.error("Reloading due to Framer Motion error:", event.message);
 
-        // Get current reload count from sessionStorage (default to 0)
         const reloadCount =
           parseInt(sessionStorage.getItem("reloadCount"), 10) || 0;
 
-        if (reloadCount < 10) {
-          // If we haven't exceeded the max reload attempts
+        if (reloadCount < 20) {
           sessionStorage.setItem("reloadCount", reloadCount + 1);
           window.location.reload();
         } else {
-          // We've reached the max reload attempts
           console.error("Max reload attempts reached. Not reloading again.");
         }
       }
