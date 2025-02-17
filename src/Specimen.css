@@ -1,7 +1,7 @@
 .grid-container {
-  margin-left: 3rem;
+  margin-left: 5rem;
   display: grid;
-  grid-template-columns: repeat(4, 5fr);
+  grid-template-columns: repeat(3, 5fr);
   gap: 50px;
   padding: 20px;
   transition: all 0.5s ease-in-out;
@@ -11,8 +11,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
   width: fit-content;
+  padding-bottom: 50px;
 }
 
 svg {
@@ -23,6 +24,7 @@ svg {
 @media (max-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 40px;
     gap: 10px;
   }
   h1 {
@@ -34,5 +36,6 @@ svg {
   .grid-container {
     grid-template-columns: repeat(1, 1fr);
     margin-left: 0;
+    margin-bottom: 40px;
   }
 }

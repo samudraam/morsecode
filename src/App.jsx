@@ -1,8 +1,21 @@
 import "./App.css";
+import { useEffect } from "react";
 import Specimen from "./Specimen";
-import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 
 function App() {
+  useEffect(() => {
+    if (!sessionStorage.getItem("reloaded")) {
+      sessionStorage.setItem("reloaded", "true");
+      window.location.reload();
+    }
+  }, []);
+
   return (
     <>
       <div className="App">
