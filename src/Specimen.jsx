@@ -32,10 +32,6 @@ function Specimen() {
   return (
     <div>
       <>
-        <ToggleSwitch
-          isMorseAll={isMorseAll}
-          toggleAll={() => setIsMorseAll(!isMorseAll)}
-        />
         <div className="grid-container">
           {mounted && <MorseToA isMorseAll={isMorseAll} color={globalColor} />}
           {mounted && <MorseToB isMorseAll={isMorseAll} color={globalColor} />}
