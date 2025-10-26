@@ -140,7 +140,7 @@ const LandingPage = () => {
             transition={{ duration: 0.6 }}
             className="description"
           >
-            A morsecode based motion typography created by samudraam
+            A morsecode based motion typography created by samudraam made with react and framer motion.
           </motion.p>
         )}
 
