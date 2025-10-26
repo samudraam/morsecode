@@ -1,5 +1,6 @@
 import "./App.css";
 import Specimen from "./Specimen";
+import LandingPage from "./LandingPage";
 import {
   HashRouter as Router,
   Route,
@@ -12,7 +13,8 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Specimen />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/specimen" element={<Specimen />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>

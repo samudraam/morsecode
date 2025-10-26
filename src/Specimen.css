@@ -3,6 +3,25 @@ h1 {
   color: #ffffff;
   font-size: 3rem;
 }
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  gap: 1rem;
+}
+
+.header-container h1 {
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
 .grid-container {
   text-align: center;
   margin-bottom: 20px;
@@ -11,9 +30,11 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
   gap: 50px;
-  padding: 20px;
+  padding: 20px 2rem;
   transition: all 0.5s ease-in-out;
   max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .grid-item {
@@ -32,8 +53,12 @@ h1 {
 .container {
   display: flex;
   flex-direction: column;
-
   min-height: 100vh;
+  background-color: #000000;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 @media (max-width: 600px) {

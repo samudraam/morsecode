@@ -37,7 +37,6 @@ function Specimen() {
 
   const globalColor = "white";
 
-  console.log(isMorseAll);
   return (
     <>
       <div className="container">
